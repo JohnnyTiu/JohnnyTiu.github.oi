@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Niña Linda 💖</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f2;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            max-width: 400px;
+        }
+        h1 {
+            color: #e60073;
+        }
+        p {
+            font-size: 18px;
+        }
+        .btn {
+            background: #ff3385;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #cc0052;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Para Meli Linda 💖</h1>
+        <p id="mensaje">Se que ya es tarde y que no nos podemos ver, pero quería hacerte sentir especial de alguna forma y que tengas en mente que cada momento que pasa deseo poder verte y abrazarte, te quiero mucho mujer bella.</p>
+        <p id="pregunta">¿Quieres ser mi San Valentín? 🌹✨</p>
+        <button id="btnSi" class="btn" onclick="mostrarMensaje()">Sí 💕</button>
+        <button id="btnNo" class="btn" onclick="hacerMasGrande()">No 💔</button>
+        <p id="respuesta" class="hidden">Me alegra saber que hayas dicho que si mi niña linda, nunca dude en que me rechazaras, yo te amo muchoooooo</p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById("respuesta").classList.remove("hidden");
+            document.getElementById("btnSi").style.display = "none";
+            document.getElementById("btnNo").style.display = "none";
+            document.getElementById("pregunta").style.display = "none";
+            document.getElementById("mensaje").style.display = "none";
+        }
+        function hacerMasGrande() {
+            let btnSi = document.getElementById("btnSi");
+            let currentSize = parseFloat(btnSi.style.transform.replace("scale(", "").replace(")", "")) || 1;
+            btnSi.style.transform = "scale(" + (currentSize + 0.2) + ")";
+        }
+    </script>
+</body>
+</html>
